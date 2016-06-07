@@ -1,0 +1,235 @@
+// minimalist plate main less file
+
+/* minimalist z-container addtional css to add space around the website  */
+.z-container{ 
+	padding: 0px @default-spacing;
+}
+
+/* minimalist header */
+
+.header {
+	padding-bottom: @default-spacing;
+	min-height: 60px;
+	
+	a.logo {
+		margin-top: (@default-spacing*2.5);
+		float:left;
+		img { 
+			width: 100%;
+		}	
+		&:hover {
+			img {
+				.opacity(90);
+			}
+		}
+	}
+	
+	.social-links {
+		float: right;
+		padding:(@default-spacing/4) 0px 0px 0px;
+	}
+
+	.navigation{
+		clear:both;	
+	}
+	
+}
+
+/* minimalist content  */
+.content {
+	min-height: @default-spacing*20;
+	padding-bottom: @default-spacing*4;
+
+	img[align=left]{
+		margin-right: @default-spacing / 2;
+		max-width: 50%;
+	}
+	
+	// bar break
+	
+	.headline-break {
+		background-color: @accent-color;
+		padding: @default-spacing;
+		border: 1px darken(@accent-color, 5%) solid;
+		.border-radius(@default-border-radius);
+		margin: @default-spacing 0px;
+		clear: both;
+		
+		h4 {
+			margin: 0px;
+		}
+		
+		.link-wrapper {
+			text-align: right;
+		}
+		
+	}
+
+	/* horizontal rule */
+	hr{
+		border-top: none;	
+	}
+	
+}
+
+/* minimalist footer  */
+
+.footer { 
+	min-height: @default-spacing * 4; 
+	background-color: @accent-color;
+	color: @default-font-color;
+	padding: @default-spacing;
+	.border-radius(@default-border-radius);
+	
+	ul#nav {
+		margin: 0px;
+		padding: 0px;
+		li {
+			margin-bottom: @default-spacing / 2;
+			list-style: none;
+			
+			a {
+				text-decoration: none;
+				padding-left: 0px;
+				padding-right: @default-spacing;
+				&.at {
+					font-weight: bold;
+				}
+			}
+		}
+		
+		ul {
+			display: none;
+		}
+	}
+}
+
+// minimalist clear
+
+.clear,.floatfix{ 
+	clear:both
+}
+
+// minimalist 404 page styling
+
+.page404 { 
+	
+	form{
+		input[type=text]{
+			width: 60%;
+		}
+		input[type=submit]{
+			display:block;
+			margin-top: 10px;
+		}
+	}
+}
+
+// minimalist copyright
+
+.copyright { 
+	clear: both; 
+	text-align: center; 
+	font-size: 10px; 
+	padding: (@default-spacing / 4) 0px (@default-spacing / 4) 0px; 
+}
+
+/********************************************
+	nivo slider overrides
+*********************************************/
+
+.nivo-caption {
+	position:absolute;
+	left:@default-spacing;
+	bottom:@default-spacing;
+	background:darken(@body-bg-color,75%);
+	width:38%;
+	z-index:8;
+	
+	padding: @default-spacing;
+	@media screen and (max-width:620px) { padding: (@default-spacing/2); }
+	.border-radius(@default-border-radius);
+	opacity: 0.8;
+	overflow: hidden;
+	display: none;
+	-moz-opacity: 0.8;
+	filter:alpha(opacity=8);
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	h2{
+		font-size: @h2-font-size;
+		margin-bottom:(@h2-font-size / 3);
+		padding: 0px;
+		color:lighten(@h2-font-color,75%);
+		
+	}
+	span{
+		color:lighten(@paragraph-font-color,75%);
+		padding-top: (@default-spacing/2);
+		line-height:@paragraph-line-height;
+		font-size:@paragraph-font-size;
+		
+		@media screen and (max-width:620px) {
+			display: none;
+		}
+	}
+	
+}
+
+
+.nivo-prevNav,.nivo-nextNav {
+	display: none;	
+}
+
+/* Control nav styles (e.g. 1,2,3...) */
+.nivo-controlNav {
+	text-align:center;
+	padding: (@default-spacing/4) 0px;
+	
+}
+.nivo-controlNav a {
+	.transition(all 250ms ease);
+	cursor:pointer;
+	text-indent: -9999px;
+	width: 100px;
+	background-color: #999;
+	height: 4px;	
+	margin-right:5px;
+	float:left;
+	display: inline-block;
+	&:hover{
+		background-color: #666;
+	}	
+}
+
+.nivo-controlNav a.active {
+	background-color: #333;
+}
+
+/********************************************
+MIXIN OVERRIDES
+*********************************************/
+.addButtonStyles() {
+	text-shadow: 1px 1px 0px darken(@btn-bg-color,4%), -1px -1px 0px darken(@btn-bg-color,7%);
+	box-shadow: inset 0px 0px 4px lighten(@btn-bg-color,10%);
+	#gradient > .vertical(darken(@btn-bg-color,5%),@btn-bg-color);
+
+	&:hover{
+		text-shadow: 1px 1px 0px lighten(@btn-hover-bg-color,3%), inset -1px -1px 0px darken(@btn-hover-bg-color,5%);
+		box-shadow: inset 0px 0px 4px lighten(@btn-hover-bg-color,10%);
+		#gradient > .vertical(darken(@btn-hover-bg-color,5%),@btn-hover-bg-color);
+	}
+}
+
+.addSecondaryButtonStyles() {
+	text-shadow: 1px 1px 0px darken(@btn-secondary-bg-color,4%), -1px -1px 0px darken(@btn-secondary-bg-color,7%);
+	box-shadow: inset 0px 0px 4px lighten(@btn-secondary-bg-color,10%);
+	#gradient > .vertical(darken(@btn-secondary-bg-color,5%),@btn-secondary-bg-color);
+
+	&:hover{
+		text-shadow: 1px 1px 0px lighten(@btn-secondary-hover-bg-color,3%), inset -1px -1px 0px darken(@btn-secondary-hover-bg-color,5%);
+		box-shadow: inset 0px 0px 4px lighten(@btn-secondary-hover-bg-color,10%);
+		#gradient > .vertical(darken(@btn-secondary-hover-bg-color,5%),@btn-secondary-hover-bg-color);
+	}
+}

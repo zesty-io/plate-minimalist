@@ -1,0 +1,55 @@
+
+/* our usual structure width that starts changing page width */
+@media screen and (max-width: @container-max-width) {
+
+}
+
+/* ipads portrait */
+@media screen and (max-width: 768px) {
+	.nivo-caption {
+		display: none !important;
+	}
+}
+
+/* iphones landscape */
+@media screen and (max-width: 480px) {
+	.headline-break span {
+		display: block;
+	}
+	
+	.header {
+		.social-links{
+			float: none;
+			text-align: center;	
+			padding-top: @default-spacing / 2;
+		}
+		ul#nav{
+			text-align: center;
+			li {
+				float: none;
+				a{
+					padding-left: (@default-spacing / 4);
+					padding-right: (@default-spacing / 4);
+				}
+			}
+		}
+	}
+	
+	.nivo-controlNav {
+		display: none;
+	}
+	
+}
+
+/* most android 720p screens landscape */
+@media screen and (max-width: 360px) {
+
+}
+
+/* iphones portrait */
+@media screen and (max-width: 320px) {
+
+}
+
+
+

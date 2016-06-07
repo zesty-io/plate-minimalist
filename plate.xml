@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone='yes'?>
+<plate>
+	
+	<!-- clippings -->	
+	<clippings>
+		<text name="site_name" name_friendly="Site Name"><![CDATA[Minimalist, Inc.]]></text>
+		<images name="logo" name_friendly="Site Logo" limit="1">
+			<![CDATA[https://be93523bd41e2e475e74-e4edef19ad51123442eaceed55c78461.ssl.cf2.rackcdn.com/or-minimalist-logo.png]]>
+		</images>
+		<text name="copyright" name_friendly="Copyright Text"><![CDATA[Copyright text]]></text>
+		<text name="about_header" name_friendly="The About Header in the footer"><![CDATA[About]]></text>
+		<textarea name="about_text" name_friendly="The About Text in the footer"><![CDATA[About the company]]></textarea>
+		<text name="google_publisher_id" name_friendly="Google Publisher ID" />
+	</clippings>
+	
+
+	<!-- head files -->	
+	<head>
+		<doctype>html5</doctype>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" />
+	</head>
+	
+	<ingredients>
+		<templateset name="homepage" name_friendly="Homepage" view="homepage">
+			<fields>
+				<text name="opening_header_text" name_friendly="Lead in Title" required="1" />
+				<text name="button_text" name_friendly="Button Text" />
+				<internal_link name="button_link" name_friendly="Button Link" />
+				<text name="view_portfolio_text" name_friendly="View Portfolio Header" required="1" />
+				<text name="second_button_text" name_friendly="Second Button Text" required="1" />
+				<internal_link name="second_button_link" name_friendly="Second Button Link" />
+			</fields>
+			
+			<items>
+				<item link_title="Homepage" path_part="zesty_home">
+					<opening_header_text><![CDATA[Opening Header Text]]></opening_header_text>
+					<button_text><![CDATA[Contact Us]]></button_text>
+					<button_link><![CDATA[501]]></button_link>
+					<view_portfolio_text><![CDATA[View The Portfolio]]></view_portfolio_text>
+					<second_button_text><![CDATA[View All Projects]]></second_button_text>
+					<second_button_link><![CDATA[501]]></second_button_link>
+				</item>
+			</items>
+		</templateset>
+	</ingredients>
+	
+	<garnishes>
+		<jquery_nivo_slider parent_item="zesty_home" />
+		<info_squares parent_item="zesty_home" />
+	</garnishes>
+
+</plate>
