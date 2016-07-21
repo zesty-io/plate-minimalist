@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone='yes'?>
+<!-- When a web property is created using a framework, Zesty.io looks at the plate.xml file to build the Content tab in the Manager. This plate.xml will instruct Zesty.io which pages, page groups, data sets and fields the Content section should start with. -->
 <plate>
-	
-	<!-- clippings -->	
-	<clippings>
-		<text name="site_name" name_friendly="Site Name"><![CDATA[Minimalist, Inc.]]></text>
-		<images name="logo" name_friendly="Site Logo" limit="1">
-			<![CDATA[https://be93523bd41e2e475e74-e4edef19ad51123442eaceed55c78461.ssl.cf2.rackcdn.com/or-minimalist-logo.png]]>
-		</images>
-		<text name="copyright" name_friendly="Copyright Text"><![CDATA[Copyright text]]></text>
-		<text name="about_header" name_friendly="The About Header in the footer"><![CDATA[About]]></text>
-		<textarea name="about_text" name_friendly="The About Text in the footer"><![CDATA[About the company]]></textarea>
-		<text name="google_publisher_id" name_friendly="Google Publisher ID" />
-	</clippings>
-	
+	<!-- This head is very similar to the <head> you would set in a typical website.
+	If you're getting started with jQuery or a Google font, this is the spot to inclue those link and script tags. There are additional tags Zesty.io will add to every page <head> automatically, such as the title, meta description and open graph tags. -->
 
-	<!-- head files -->	
 	<head>
 		<doctype>html5</doctype>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		
+
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" />
 	</head>
-	
+
+	<!-- The base content configuration is declared here. We call them ingredients. When building a template you need at least a homepage, but other ingredients can be added as well. Content ingredients can also be added later through the sitemap tool.-->
+
+	<!-- The initial Content tab configuration is declared here. We call them ingredients. When building a template you need at least a homepage templateset, but other ingredients can be added as well. Content ingredients can also be added and edited anytime through the sitemap tool or through the Config tab.-->
+	<!-- There are 3 content types:
+	1.Templatesets - a single page e.g. homepage
+	2. Pagesets - Multiple pages that share an HTML view e.g. articles
+	3. Datasets - Groups of uniform content items used as elements on a page. e.g. images for a slider or Q-and-A's for an FAQ page. -->
+
 	<ingredients>
+		<!--Since the homepage is a single page, it is a templateset. -->
 		<templateset name="homepage" name_friendly="Homepage" view="homepage">
 			<fields>
 				<text name="opening_header_text" name_friendly="Lead in Title" required="1" />
@@ -33,9 +31,11 @@
 				<text name="second_button_text" name_friendly="Second Button Text" required="1" />
 				<internal_link name="second_button_link" name_friendly="Second Button Link" />
 			</fields>
-			
+			<!-- Each content set needs to be preloaded with content. You can see that the XML tag names below match the field names above -->
 			<items>
+				<!-- path_part sets zesty_home as the homepage -->
 				<item link_title="Homepage" path_part="zesty_home">
+					<!-- Wrapping content in CDATA is neccesary -->
 					<opening_header_text><![CDATA[Opening Header Text]]></opening_header_text>
 					<button_text><![CDATA[Contact Us]]></button_text>
 					<button_link><![CDATA[501]]></button_link>
@@ -46,10 +46,30 @@
 			</items>
 		</templateset>
 	</ingredients>
-	
+
+	<!-- Garnishes -->
+
+	<!-- Garnishes are widgets that you can add to your page. The Garnishes below add in the slider in the header and the info squares. They should be parented to the page that they are on. For example, the slider and info squares are children of parent_item 'zesty_home' -->
+
 	<garnishes>
 		<jquery_nivo_slider parent_item="zesty_home" />
 		<info_squares parent_item="zesty_home" />
 	</garnishes>
+
+	<!-- Clippings -->
+
+	<!-- Clippings are globally accessible content. For example, site logo, background images, seasonal ad images, and other template consistent data between pages are great candidates for clippings. By setting clippings, content editors can control the consistent parts of your template. -->
+	<!-- Clippings follow the same pattern as content ingredients. You can see the matching XML tags and field names below. -->
+
+	<clippings>
+		<text name="site_name" name_friendly="Site Name"><![CDATA[Minimalist, Inc.]]></text>
+		<images name="logo" name_friendly="Site Logo" limit="1">
+			<![CDATA[https://be93523bd41e2e475e74-e4edef19ad51123442eaceed55c78461.ssl.cf2.rackcdn.com/or-minimalist-logo.png]]>
+		</images>
+		<text name="copyright" name_friendly="Copyright Text"><![CDATA[Copyright text]]></text>
+		<text name="about_header" name_friendly="The About Header in the footer"><![CDATA[About]]></text>
+		<textarea name="about_text" name_friendly="The About Text in the footer"><![CDATA[About the company]]></textarea>
+		<text name="google_publisher_id" name_friendly="Google Publisher ID" />
+	</clippings>
 
 </plate>

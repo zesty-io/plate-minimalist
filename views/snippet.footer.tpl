@@ -24,8 +24,10 @@
 				<p>
 					{{ contact_page.first().address }}<br />
 					{{ contact_page.first().city }}, {{ contact_page.first().state }} {{ contact_page.first().zip }}<br>
-					<a href="mailto:{{contact_page.first().email.obfuscate()}}">{{ contact_page.first().email }}</a><br />
-					<a href="tel:{{contact_page.first().phone.obfuscate()}}">{{ contact_page.first().phone }}</a>
+
+					<a href="mailto:{{ contact_page.first().email.obfuscate() }}">{{ contact_page.first().email }}</a><br />
+					<a href="tel:{{ contact_page.first().phone.obfuscate() }}">{{ contact_page.first().phone }}</a>
+
 				</p>
 			</div>
 		</div>

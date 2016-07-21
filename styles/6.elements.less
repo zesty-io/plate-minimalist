@@ -1,12 +1,12 @@
 /**
 	elements.less
-	
+
 	version 1
-	
-	General HTML Elements are styled using Zesty Variables (found in config)
+
+	General HTML Elements are styled using Zesty.io Variables (found in config)
 	Variables can be changed by website managers (not just developers) so it is
-	important this file remains consistent. This file may have scheduled updates 
-	to keep a consistent Zesty experience. 
+	important this file remains consistent. This file may have scheduled updates
+	to keep a consistent Zesty.io experience. 
 
 	last updated: 8-6-2013
 */
@@ -19,8 +19,8 @@ body {
 
 
 /* container and structure serve as the main wrappers to sections like header, content, and footer */
-.z-container, .z-structure { 
-	max-width: @container-max-width; 
+.z-container, .z-structure {
+	max-width: @container-max-width;
 	background-color: @content-bg-color;
 	margin: 0px auto;
 }
@@ -30,25 +30,25 @@ body {
 
 ul, ol, dl{
 	margin: @list-margin;
-	line-height: @list-font-size * 1.5;	
+	line-height: @list-font-size * 1.5;
 	font-size: @list-font-size;
 	color: @list-font-color;
-	
+
 	li,dt{
 		list-style: @list-unordered-style;
 		margin-left: @list-margin;
 		margin-bottom: @list-margin / 3;
 	}
-	
+
 }
 
 /* ordered lists and definitions */
 
-ol li{ list-style: @list-ordered-style; } 
+ol li{ list-style: @list-ordered-style; }
 
 dl{
-	dt {	
-		font-weight: bold;	
+	dt {
+		font-weight: bold;
 	}
 	dd{
 		margin-left: @list-margin * 2;
@@ -64,7 +64,7 @@ hr{
 	border-top: 1px lighten(@accent-color,8%) solid;
 	margin: @default-spacing 0px;
 	height: 0px;
-	
+
 }
 
 /* tables */
@@ -87,7 +87,7 @@ table {
 			border-bottom-width: 2px;
 			font-weight: bold;
 		}
-		
+
 		&:nth-child(even) {
 			background: darken(@content-bg-color,8%);
 		}
@@ -95,7 +95,7 @@ table {
 	tr:last-child td {
 		border-bottom: none;
 	}
-	
+
 }
 
 
@@ -104,28 +104,28 @@ table {
 .side-bar{
 	padding: @default-spacing;
 	background-color: @sidebar-bg-color;
-	.border-radius(@default-border-radius);	
-	
+	.border-radius(@default-border-radius);
+
 	li a, a{
 		color: @subnav-link-color;
 		font-weight: @subnav-link-weight;
-		text-decoration: @subnav-text-decoration;	
+		text-decoration: @subnav-text-decoration;
 
 		&:visited{
-			color: @subnav-link-visited-color;	
+			color: @subnav-link-visited-color;
 		}
 		&:hover{
 			color: @subnav-link-hover-color;
-			text-decoration: @subnav-link-hover-text-decoration;	
+			text-decoration: @subnav-link-hover-text-decoration;
 		}
 		&:active{
-			color: @subnav-link-active-color;	
+			color: @subnav-link-active-color;
 		}
-			
+
 	}
-	
+
 	li{
 		list-style:none; /* hide bullet point in sidebar lists, which are typically navigation items */
 	}
-	
+
 }
