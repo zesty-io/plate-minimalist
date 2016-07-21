@@ -7,9 +7,9 @@
 **)
 
 <div class="z-container">
-	
-	{{include header}}
-	
+
+	{{ include header }}
+
 	<div class="content-container">
 		<div class="content page404">
 			(** this is your 404 page when a bad page is reached **)
@@ -28,10 +28,7 @@
 			<div class="clear"></div>
 		</div>
 	</div>
-	
-	{{include footer}}
-	
+
+	{{ include footer }}
+
 </div>
-
-
-
