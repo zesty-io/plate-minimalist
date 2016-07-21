@@ -25,7 +25,8 @@ Once in your chosen web property, click the dark blue button 'Z Open Manager'.
 This completes the Zesty.io workflow!
 
 
-See the notes below on what each file/folder contains:
+# See the notes below on what each file/folder contains:
+
 # Shield.png
 This is a thumbnail image that will represent this template in your Zesty.io account. To view this image login to your Zesty.io account and select My Account, then select Frameworks from the left-hand menu. You will then be able to view all the thumbnail images for all of your frameworks.
 
