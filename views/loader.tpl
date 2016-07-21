@@ -1,23 +1,15 @@
-(** plate: minamalist > loader **)
-(** 
-	- loader is the first parsley view file to load on every page load  
-	- loader is the kickstarter to all the views.
-	- {{current_view}} is the only call neccesary here. It is common to 
-	  wrap current_view in a container with a header and footer above it	
-**)
+<!-- The loader has content that is in between the <body> tags and that is consistent across all the pages of your site. For example, you probably have the same header, footer, and navigation bar on each page. Therefore those elements of your page would go here.  -->
+
 <div class="z-container">
-	
-	{{include header}}
-	
+
+	{{ include header }}
+
 	<div class="structure content">
-		{{current_view}}
-		
+		{{ current_view }}
+
 		<div class="clear"></div>
 	</div>
-	
-	{{include footer}}
-	
+
+	{{ include footer }}
+
 </div>
-
-
-
