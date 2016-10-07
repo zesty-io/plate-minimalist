@@ -1,35 +1,35 @@
 /**
 	navigation.less
-	
+
 	version 1
 
-	This Less file controls the basic {{navigation}} outputted by Parsley 
-	by using Zesty Variables. You may edit or delete this file, but generally
-	you should be using the Zesty navigation variables in your styling to create
+	This Less file controls the basic {{navigation}} outputted by Parsley
+	by using Zesty.io Variables. You may edit or delete this file, but generally
+	you should be using the Zesty.io navigation variables in your styling to create
 	a consistent experience for your website managers.
 
 	last updated: 8-6-2013
 */
 
-ul#nav { 
+ul#nav {
 	margin: 0px;
-	padding: 0px;  
+	padding: 0px;
 	line-height: 0px;
 	background-color: @nav-bg-color;
-	
-	li { 
-		display: inline-block; 
-		list-style: none;  
-		margin: 0px; 
-		padding: 0px; 
+
+	li {
+		display: inline-block;
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
 		line-height: 0px;
 		outline: 0;
-		
+
 		&:hover{
-			background-color: @nav-hover-bg-color;	
+			background-color: @nav-hover-bg-color;
 		}
-		
-		a { 
+
+		a {
 			text-decoration: none;
 			display: block;
 			height: @nav-height;
@@ -40,12 +40,12 @@ ul#nav {
 			padding: 0px @nav-link-padding-right 0px @nav-link-padding-left;
 			margin: 0px;
 			outline: 0;
-			
+
 			&:hover {
 				color: @nav-hover-font-color;
 				cursor: pointer;
 			}
-			
+
 			// a style that attaches to the url you are on, the "you are here" class
 			&.at,&.at:hover{
 				color: @nav-at-font-color;
@@ -53,7 +53,7 @@ ul#nav {
 				font-weight: bold;
 			}
 		}
-		
+
 		ul {
 			display: none;
 		}
